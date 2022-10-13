@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "chalk-v2": "^1.0.2",
+    "discord.js": "^14.6.0",
+    "dotenv": "^16.0.3"
+  },
+  "name": "j.info-economy-adventure.bot",
+  "description": "<img src=\"https://github.com/ScopeOpen/j.info-economy-adventure.bot/blob/main/mindmup/mindmup.png?raw=true\">",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ScopeOpen/j.info-economy-adventure.bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ScopeOpen/j.info-economy-adventure.bot/issues"
+  },
+  "homepage": "https://github.com/ScopeOpen/j.info-economy-adventure.bot#readme"
+}

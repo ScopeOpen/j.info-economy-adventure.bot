@@ -6,9 +6,9 @@ Discord.js Documentation
     Client : https://discord.js.org/#/docs/discord.js/main/class/Client
 */
 
-import { Client, Collection, GatewayIntentBits, Partials } from 'discord.js'
-import dotenv from 'dotenv'
-import config from './config.json' 
+const { Client, Collection, GatewayIntentBits, Partials } = require('discord.js');
+require('dotenv').config()
+const config = require('./config.json'); 
 
 const client = new Client({
     intents: [
@@ -21,15 +21,15 @@ const client = new Client({
     ]
 })
 
-dotenv.config()
+
 global.config = config
 module.exports = client
 
 client.commands = new Collection();
 
 // Imports for loaders
-import { readdir } from "fs/promises";
-import chalk from 'chalk'
+const { readdir } = require("fs/promises");
+const chalk = require('chalk-v2');
 
 // Loads all commands
 async function commandLoad() {
@@ -37,13 +37,13 @@ async function commandLoad() {
     
     dirs.forEach(dir => {
 
-        let files = readdir(`./commands/${dir}/`).filter(file => file.endsWith('.js'));
+        let files = require(`./commands/${dir}/`).filter(file => file.endsWith('.js'));
         if(!files || files.length <= 0) return console.log(chalk.red('No commands'))
 
         let loaded = 0;
 
         files.forEach(file => {
-            let command = import(`../commands/${dir}/${file}`).catch(err => {
+            let command = require(`../commands/${dir}/${file}`).catch(err => {
                 console.log(chalk.red(`Error ( Loading : commands/${dir}/${file} ) : `, err.code))
                 loaded =- 1 
                 return
@@ -67,7 +67,7 @@ async function eventLoad() {
     let loaded = 0;
 
     files.forEach(file => {
-        import(`../util/events/${file}`).catch(err => {
+        require(`../util/events/${file}`).catch(err => {
             console.log(chalk.red(`Error ( Loading : util/events/${file} ) : `, err.code))
             loaded =- 1
             return
