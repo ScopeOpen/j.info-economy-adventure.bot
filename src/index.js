@@ -1,3 +1,11 @@
+/*
+Discord.js Documentation
+
+    Collection : https://discord.js.org/#/docs/collection/main/class/Collection
+    Partials : https://discord.js.org/#/docs/discord.js/main/typedef/Partials
+    Client : https://discord.js.org/#/docs/discord.js/main/class/Client
+*/
+
 import { Client, Collection, GatewayIntentBits, Partials } from 'discord.js'
 import dotenv from 'dotenv'
 import config from './config.json' 
